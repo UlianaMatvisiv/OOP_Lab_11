@@ -9,7 +9,12 @@ public class BuilderTest {
     public static final int HEIGHT = 173;
     @Test
     public void testIvan() {
-        User ivan = User.builder().name("Uliana").age(AGE).gender("f").weight(WEIGHT).height(HEIGHT).build();
+        User ivan = User.builder()
+                .name("Uliana")
+                .age(AGE).gender("f")
+                .weight(WEIGHT)
+                .height(HEIGHT)
+                .build();
         Assertions.assertEquals(ivan.getName(), "Uliana");
         Assertions.assertEquals(ivan.getAge(), AGE);
         Assertions.assertEquals(ivan.getGender(), "f");
