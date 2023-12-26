@@ -17,7 +17,8 @@ public class MailSender {
     public static final String APISECRET =
             System.getenv("MAILJET_SECRET_KEY");
 
-    public void sendMail(MailInfo mailInfo) throws MailjetException, MailjetSocketTimeoutException {
+    public void sendMail(MailInfo mailInfo) throws MailjetException, 
+                MailjetSocketTimeoutException {
         MailjetClient client;
         MailjetRequest request;
         MailjetResponse response;
@@ -27,19 +28,19 @@ public class MailSender {
         request = new MailjetRequest(Emailv31.resource)
                 .property(Emailv31.MESSAGES, new JSONArray()
                         .put(new JSONObject()
-                                .put(Emailv31.Message.FROM, new JSONObject()
-                                        .put("Email", "abc34tgj@ucu.edu.ua")
-                                        .put("Name", "Uliana"))
-                                .put(Emailv31.Message.TO, new JSONArray()
-                                        .put(new JSONObject()
-                                                .put("Email", mailInfo.getClient()
-                                                    .getMail())
-                                                .put("Name", mailInfo.getClient()
-                                                    .getName())))
-                                .put(Emailv31.Message.SUBJECT,
-                                        "Hi!")
-                                .put(Emailv31.Message.TEXTPART,
-                                        "Some text")));
+                        .put(Emailv31.Message.FROM, new JSONObject()
+                        .put("Email", "abc34tgj@ucu.edu.ua")
+                        .put("Name", "Uliana"))
+                        .put(Emailv31.Message.TO, new JSONArray()
+                        .put(new JSONObject()
+                        .put("Email", mailInfo.getClient()
+                                .getMail())
+                        .put("Name", mailInfo.getClient()
+                                .getName())))
+                        .put(Emailv31.Message.SUBJECT,
+                                "Hi!")
+                        .put(Emailv31.Message.TEXTPART,
+                                "Some text")));
         response = client.post(request);
         System.out.println(response.getStatus());
         System.out.println(response.getData());

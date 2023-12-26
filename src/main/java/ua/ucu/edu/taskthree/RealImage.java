@@ -1,8 +1,8 @@
 package ua.ucu.edu.taskthree;
 
-import javax.swing.JFrame;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+// import javax.swing.JFrame;
+// import javax.swing.ImageIcon;
+// import javax.swing.JLabel;
 
 public class RealImage implements MyImage {
     private JFrame frame;

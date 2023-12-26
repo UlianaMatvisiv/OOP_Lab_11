@@ -4,14 +4,17 @@ import org.junit.jupiter.api.Test;
 import ua.ucu.edu.taskone.User;
 
 public class BuilderTest {
+    public static final int AGE = 18;
+    public static final int WEIGHT = 60;
+    public static final int HEIGHT = 173;
     @Test
     public void testIvan() {
-        User ivan = User.builder().name("Uliana").age(18).gender("f").weight(60).height(173).build();
+        User ivan = User.builder().name("Uliana").age(AGE).gender("f").weight(WEIGHT).height(HEIGHT).build();
         Assertions.assertEquals(ivan.getName(), "Uliana");
-        Assertions.assertEquals(ivan.getAge(), 18);
+        Assertions.assertEquals(ivan.getAge(), AGE);
         Assertions.assertEquals(ivan.getGender(), "f");
-        Assertions.assertEquals(ivan.getWeight(), 60);
-        Assertions.assertEquals(ivan.getHeight(), 173);
+        Assertions.assertEquals(ivan.getWeight(), WEIGHT);
+        Assertions.assertEquals(ivan.getHeight(), HEIGHT);
     }
 
     @Test

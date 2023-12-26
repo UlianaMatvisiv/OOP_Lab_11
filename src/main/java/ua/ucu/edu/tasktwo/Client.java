@@ -13,7 +13,10 @@ public class Client {
     private Gender sex;
     private String mail;
 
-    public Client(String somename, int someage, Gender somesex, String somemail) {
+    public Client(String somename, 
+                    int someage,
+                    Gender somesex,
+                    String somemail) {
         id = clientCounter++;
         this.name = somename;
         this.age = someage;

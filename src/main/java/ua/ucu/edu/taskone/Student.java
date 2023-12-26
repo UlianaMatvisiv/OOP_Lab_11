@@ -8,7 +8,7 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @SuperBuilder @ToString(callSuper = true) @Getter
-public class Student extends User{
+public class Student extends User {
     @Singular ("mark")
     private List<Integer> grades;
 }
